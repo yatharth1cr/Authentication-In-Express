@@ -5,4 +5,4 @@
 - **Authentication Flow** (ExplainWithCode)
 ## 2. Registration Process
 - **Registration**
-- **Mongoose middlewares & bcrypt** (ExplainWithCode)
+- **Mongoose Middlewares & Bcrypt** (ExplainWithCode)
