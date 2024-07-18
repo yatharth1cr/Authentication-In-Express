@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
+var bcrypt = require("bcrypt");
 
 var userSchema = new Schema({
   name: { type: String, required: true },
@@ -9,8 +10,20 @@ var userSchema = new Schema({
   phone: { type: String },
 });
 
-userSchema.pre("save", (next) => {
-  console.log(this);
+userSchema.pre("save", function (next) {
+  if (this.password && this.isModified("password")) {
+    bcrypt
+      .hash(this.password, 10)
+      .then((hashed) => {
+        this.password = hashed;
+        return next();
+      })
+      .catch((err) => {
+        return next(err);
+      });
+  } else {
+    next();
+  }
 });
 
 module.exports = mongoose.model("User", userSchema);
