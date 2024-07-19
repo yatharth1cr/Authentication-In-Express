@@ -16,14 +16,20 @@ userSchema.pre("save", function (next) {
       .hash(this.password, 10)
       .then((hashed) => {
         this.password = hashed;
-        return next();
+        next();
       })
       .catch((err) => {
-        return next(err);
+        next(err);
       });
   } else {
     next();
   }
 });
+
+userSchema.methods.verifyPassword = function (password, cb) {
+  bcrypt.compare(password, this.password, (err, result) => {
+    cb(err, result);
+  });
+};
 
 module.exports = mongoose.model("User", userSchema);

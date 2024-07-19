@@ -13,14 +13,16 @@
   <body>
     <!-- header  -->
     <header>
-      <h1>User</h1>
-      <a href="/users/register"><p>Register User</p></a>
+      <a href="/users" class="home-btn">
+        <h1>User</h1>
+      </a>
+      <a href="/users/register" class="head-btn"><p>Register User</p></a>
     </header>
 
     <!-- login form  -->
     <form action="/users/login" method="post">
       <h2>Login Form</h2>
-      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
       <input type="password" name="password" placeholder="Password" required />
       <button type="submit">Login User</button>
     </form>
