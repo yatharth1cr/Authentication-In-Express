@@ -21,8 +21,13 @@ router.post("/register", (req, res, next) => {
     });
 });
 
+// render loginForm
 router.get("/login", (req, res, next) => {
   res.render("loginForm");
+});
+
+router.post("/login", (req, res, next) => {
+  console.log(req.body);
 });
 
 module.exports = router;
