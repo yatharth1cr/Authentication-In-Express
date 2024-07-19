@@ -6,6 +6,16 @@ body {
   height: 100vh;
 }
 
+.home-btn {
+  color: black;
+  text-decoration: none;
+}
+
+h1:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
 header {
   padding: 0rem 2rem;
   background-color: #007bff;
@@ -15,18 +25,13 @@ header {
   margin-bottom: 20px;
 }
 
-header a {
+.head-btn {
   text-decoration: none;
   border-radius: 8px;
   color: white;
   font-weight: bold;
   background-color: rgb(34, 34, 34);
   padding: 0 2rem;
-}
-
-header a:hover {
-  color: #333;
-  background-color: #fff;
 }
 
 form {
