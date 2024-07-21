@@ -7,3 +7,6 @@
 - **Registration**
 - **Mongoose Middlewares & Bcrypt** (ExplainWithCode)
 ## 3. Login Process
+- Login Steps
+- **Handling Sessions** (ExplainWithCode)
+## 4. Flash messages & logout
