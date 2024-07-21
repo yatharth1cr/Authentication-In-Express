@@ -80,3 +80,8 @@ form button {
 form button:hover {
   background: #218838;
 }
+
+.error-1 {
+  color: red;
+  font-weight: 500;
+}

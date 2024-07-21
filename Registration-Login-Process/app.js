@@ -7,12 +7,14 @@ var mongoose = require("mongoose");
 var session = require("express-session");
 var MongoStore = require("connect-mongo");
 
+// for flash message
+var flash = require("connect-flash");
+
 // dotenv
 require("dotenv").config();
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-var dashboardRouter = require("./routes/dashboard");
 
 // connect mongoDB
 mongoose
@@ -52,9 +54,9 @@ app.use(
   })
 );
 
+app.use(flash());
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/dashboard", dashboardRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
