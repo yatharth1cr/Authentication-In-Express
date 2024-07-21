@@ -4,7 +4,10 @@
 - **What is Authentication**
 - **Authentication Flow** (ExplainWithCode)
 
-## 2. Registration-Login-Process
+---
+
+## 2. Registration-Login Project
+
 ### 2.1 Registration Process
 - **Registration**
 - **Mongoose Middlewares & Bcrypt** (ExplainWithCode)
@@ -13,6 +16,6 @@
 - **Login Steps**
 - **Handling Sessions** (ExplainWithCode)
 
-### 2.3 Flash messages & Logout
-- **Flash messages**
+### 2.3 Flash Messages & Logout
+- **Flash Messages**
 - **Logout** (ExplainWithCode)
