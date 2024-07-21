@@ -10,3 +10,5 @@
 - Login Steps
 - **Handling Sessions** (ExplainWithCode)
 ## 4. Flash messages & logout
+- Flash messages
+- Logout (ExplainWithCode)
