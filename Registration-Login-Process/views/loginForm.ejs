@@ -22,8 +22,11 @@
     <!-- login form  -->
     <form action="/users/login" method="post">
       <h2>Login Form</h2>
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="password" name="password" placeholder="Password" required />
+      <% if(error){ %>
+      <p class="error-1"><%= error%></p>
+      <% } %>
+      <input type="email" name="email" placeholder="Email" />
+      <input type="password" name="password" placeholder="Password" />
       <button type="submit">Login User</button>
     </form>
   </body>

@@ -10,27 +10,34 @@ body {
 
 /* Header styling */
 header {
-  background-color: #333;
+  background-color: #c9552b;
   color: #fff;
-  padding: 15px 0;
+  padding: 4px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-header a {
+.head-btn {
   text-decoration: none;
+  border-radius: 8px;
+  color: black;
+  font-weight: bold;
+  background-color: #fff;
+  padding: 0 2rem;
+}
+
+.home-btn {
   color: #fff;
+  text-decoration: none;
 }
 
-header .home-btn h1,
-header .head-btn p {
-  margin: 0;
-  padding: 0;
+.home-btn:hover {
+  color: black;
 }
 
-header a:hover {
-  color: #ffcc00;
+.head-btn:hover {
+  color: #fff;
+  background-color: #333;
 }
 
 /* Container for the dashboard content */
@@ -61,7 +68,7 @@ header a:hover {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: crimson;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;

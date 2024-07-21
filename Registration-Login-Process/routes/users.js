@@ -23,13 +23,14 @@ router.post("/register", (req, res, next) => {
 
 // render loginForm
 router.get("/login", (req, res, next) => {
-  res.render("loginForm");
+  var error = req.flash("error")[0];
+  res.render("loginForm", { error });
 });
 
 router.post("/login", (req, res, next) => {
   var { email, password } = req.body;
   if (!email || !password) {
-    console.log("Email or password not provided");
+    req.flash("error", "Email/password Required");
     return res.redirect("/users/login");
   }
 
@@ -37,7 +38,7 @@ router.post("/login", (req, res, next) => {
     .then((user) => {
       // no user
       if (!user) {
-        console.log("User not found");
+        req.flash("error", "User Not Found");
         return res.redirect("/users/login");
       }
 
@@ -46,16 +47,30 @@ router.post("/login", (req, res, next) => {
         if (err) return next(err);
         // if incorrect pass
         if (!result) {
-          console.log("Password incorrect");
+          req.flash("error", "Password incorrect");
           return res.redirect("/users/login");
         }
         // persist logged in user information
         req.session.userId = user.id;
-        res.redirect("/dashboard");
+        res.redirect("/users/dashboard");
       });
     })
     .catch((err) => {
       console.error("Error finding user:", err);
+      return next(err);
+    });
+});
+
+// dashboard
+router.get("/dashboard", (req, res, next) => {
+  User.findById(req.session.userId)
+    .then((user) => {
+      if (!user) {
+        return res.redirect("/users/login");
+      }
+      res.render("dashboard", { user });
+    })
+    .catch((err) => {
       return next(err);
     });
 });
